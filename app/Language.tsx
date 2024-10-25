@@ -30,11 +30,21 @@ export default function Language(){
     }
 
     return (
-        <div className="relative card w-40 h-fit bg-[#ffe8ce] border-black border-[1.5px]">
-            <p className="pixelify p-4 hyphens-manual break-words">{sample}</p>
-            <button onClick={() => getNewSample()} className='absolute bottom-[-30px] w-full flex justify-center'>
-                <img className="w-5" src="redo.png" />
-            </button>
+        <div className="flex flex-col items-center justify-center">
+            <div className="pixelify mb-2 outline-none">
+                <select className="bg-[#ffe8ce] border-black border-[1.5px]" onChange={(e: any) => setLanguageId
+            (e.target.value)}>
+                    <option>in</option>
+                    <option>it</option>
+                    <option>es</option>
+                </select>
+            </div>
+            <div className="relative card w-40 h-fit bg-[#ffe8ce] border-black border-[1.5px]">
+                <p className="pixelify p-4 hyphens-manual break-words">{sample}</p>
+                <button onClick={() => getNewSample()} className='absolute bottom-[-30px] w-full flex justify-center'>
+                    <img className="w-5" src="redo.png" />
+                </button>
+            </div>
         </div>
     )
 }
