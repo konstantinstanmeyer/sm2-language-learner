@@ -5,8 +5,8 @@ interface Params {
     id: string;
 }
 
-export async function GET(request: NextRequest, context: { params: Params }){
-    const { id } = await context.params;
+export async function GET(request: NextRequest, { params }: {params: Params}){
+    const { id } = await params;
 
     const text = await fs.readFile(process.cwd() + "/lib/languages/" + id + "/basic.txt", 'utf-8');
 
