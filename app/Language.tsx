@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 
 function getData(currentLanguage: string): Promise<any>{
-    return fetch("http://localhost:3000/api/language/" + currentLanguage)
+    return fetch("/api/language/" + currentLanguage)
     .then(r => r.json());
 }
 
