@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
+import path from "path";
 
 interface Params {
     id: string;
@@ -8,7 +9,10 @@ interface Params {
 export async function GET(request: NextRequest, { params }: {params: Promise<{ id: string }> }){
     const { id } = await params;
 
-    const text = await fs.readFile(process.cwd() + "/lib/languages/" + id + "/basic.txt", 'utf-8');
+    const publicDirectory = path.join(process.cwd(), 'public');
+    const fullPath = path.join(publicDirectory, `languages/${id}/basic.txt`);
+
+    const text = await fs.readFile(fullPath, 'utf-8');
 
     const textBlocks = text.split('\n');
     
