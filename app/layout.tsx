@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pixelifySans.variable} bg-[#ffdeb9]`}
+        className={`${pixelifySans.variable} bg-[#ffdeb9] h-screen overflow-y-hidden`}
       >
         <Navbar />
         {children}
