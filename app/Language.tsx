@@ -30,7 +30,7 @@ export default function Language(){
     }
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center transition-all ease-in">
             <div className="pixelify mb-2 outline-none">
                 <select className="bg-[#ffe8ce] border-black border-[1.5px]" onChange={(e: any) => setLanguageId
             (e.target.value)}>
